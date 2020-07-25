@@ -15,12 +15,9 @@ namespace WebApplication17.Controllers
     {
         private UmbrellaContext db;
        
-
         public HomeController(UmbrellaContext context)
         {
             db = context;
-
-
         }
 
         [HttpGet]
