@@ -41,7 +41,7 @@ namespace WebApplication17.Controllers
         }
 
         [HttpGet("AddUser")]
-        public async Task<int> AddUser()
+        public async Task<UserIdentificator> AddUser()
         {
             User createdUser = new User() { RegisterDate = new DateTime() };
 
@@ -49,7 +49,7 @@ namespace WebApplication17.Controllers
 
             await db.SaveChangesAsync();
 
-            return createdUser.UserId;
+            return new UserIdentificator() { UserId = createdUser.UserId };
         }
 
         [HttpGet("GetFaqs")]

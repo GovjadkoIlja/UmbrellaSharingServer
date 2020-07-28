@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebApplication17.Models
 {
-    public class UserIdResponse
+    public class AccessInfo
     {
-        public int userId { get; set; }
+        public int AccessType { get; set; }
     }
 }

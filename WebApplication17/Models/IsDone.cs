@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebApplication17.Models
 {
-    public class StatusResponse
+    public class IsDone
     {
-        public int Status { get; set; }
+        public bool IsSuccess { get; set; }
     }
 }

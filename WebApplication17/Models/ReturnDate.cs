@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebApplication17.Models
 {
-    public class CodeResponse
+    public class ReturnDate
     {
-        public int Code { get; set; }
+        public DateTime Date { get; set; }
     }
 }
