@@ -124,18 +124,19 @@ namespace WebApplication17.Controllers
         }
 
         [HttpPost("SaveFeedback")]
-        public async Task<IsDone> SaveFeedback(int orderId, string feedback, int mark /*FeedbackData feedbackData*/)
+        public async Task<IsDone> SaveFeedback(FeedbackData feedbackData)
         {
 
-            Console.WriteLine("FEEEDBAAAACK " + orderId + " " + feedback + " " + mark);
+            Console.WriteLine("FEEEDBAAAACK " + feedbackData.OrderId + " " + feedbackData.Feedback + " " + feedbackData.Mark);
 
             Rent rent = db.Rents
-                    .Where(r => r.RentId == orderId)
+                    .Where(r => r.RentId == feedbackData.OrderId)
                     .FirstOrDefault();
 
+            Console.WriteLine("RENTID= " + rent.RentId);
 
-            rent.Feedback = feedback;
-            rent.Mark = mark;
+            rent.Feedback = feedbackData.Feedback;
+            rent.Mark = feedbackData.Mark;
 
             await db.SaveChangesAsync();
 
